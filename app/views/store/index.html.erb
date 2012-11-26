@@ -3,6 +3,7 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
+<h4>You've been here <%= pluralize(@count.to_i, "time") %></h4>
 
 <% @products.each do |product| %>
 
@@ -18,6 +19,7 @@
 		<span class="price"><%= number_to_currency(product.price) %></span>
 		<%= button_to 'Add to Cart', line_items_path(product_id: product) %>
 	</div>
+
 </div>
 
 <% end %>
